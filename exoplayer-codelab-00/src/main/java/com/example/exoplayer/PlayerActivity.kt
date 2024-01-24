@@ -17,6 +17,7 @@ package com.example.exoplayer
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
 import com.example.exoplayer.databinding.ActivityPlayerBinding
 
@@ -41,6 +42,9 @@ class PlayerActivity : AppCompatActivity() {
             .build()
             .also { exoPlayer ->
                 viewBinding.videoView.player = exoPlayer
+
+                val mediaItem = MediaItem.fromUri(getString(R.string.media_url_mp3))
+                exoPlayer.setMediaItem(mediaItem)
             }
     }
 }
