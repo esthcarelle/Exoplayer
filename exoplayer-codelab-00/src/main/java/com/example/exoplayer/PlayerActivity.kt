@@ -15,8 +15,12 @@
  */
 package com.example.exoplayer
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.media3.common.MediaItem
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.common.util.Util
@@ -61,6 +65,15 @@ class PlayerActivity : AppCompatActivity() {
         hideSystemUi()
         if ((Util.SDK_INT <= 23 || player == null)) {
             initializePlayer()
+        }
+    }
+
+    @SuppressLint("InlinedApi")
+    private fun hideSystemUi() {
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        WindowInsetsControllerCompat(window, viewBinding.videoView).let { controller ->
+            controller.hide(WindowInsetsCompat.Type.systemBars())
+            controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
     }
 }
