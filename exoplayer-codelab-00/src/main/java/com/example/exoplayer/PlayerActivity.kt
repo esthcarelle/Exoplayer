@@ -37,6 +37,8 @@ class PlayerActivity : AppCompatActivity() {
     }
 
     private var player: ExoPlayer? = null
+    private var playWhenReady = true
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
