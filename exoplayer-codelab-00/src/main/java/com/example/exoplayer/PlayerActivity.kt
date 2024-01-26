@@ -88,5 +88,6 @@ class PlayerActivity : AppCompatActivity() {
             playWhenReady = exoPlayer.playWhenReady
             exoPlayer.release()
         }
+        player = null
     }
 }
