@@ -38,6 +38,7 @@ class PlayerActivity : AppCompatActivity() {
 
     private var player: ExoPlayer? = null
     private var playWhenReady = true
+    private var mediaItemIndex = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
