@@ -84,6 +84,8 @@ class PlayerActivity : AppCompatActivity() {
     private fun releasePlayer(){
         player?.let{ exoPlayer ->
             playbackPosition = exoPlayer.currentPosition
+            mediaItemIndex = exoPlayer.currentMediaItemIndex
+
         }
     }
 }
