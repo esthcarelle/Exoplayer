@@ -55,7 +55,7 @@ class PlayerActivity : AppCompatActivity() {
 
                 val mediaItem = MediaItem.fromUri(getString(R.string.media_url_mp3))
                 exoPlayer.setMediaItems(listOf(mediaItem), mediaItemIndex, playbackPosition)
-
+                exoPlayer.playWhenReady = playWhenReady
             }
     }
     public override fun onStart() {
