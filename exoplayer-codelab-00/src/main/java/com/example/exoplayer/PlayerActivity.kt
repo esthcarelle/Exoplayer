@@ -51,6 +51,8 @@ class PlayerActivity : AppCompatActivity() {
         player = ExoPlayer.Builder(this)
             .build()
             .also { exoPlayer ->
+                // Update the track selection parameters to only pick standard definition tracks
+                exoPlayer.trackSelectionParameters = exoPlayer.trackSelectionParameters
 
             }
     }
