@@ -51,12 +51,7 @@ class PlayerActivity : AppCompatActivity() {
         player = ExoPlayer.Builder(this)
             .build()
             .also { exoPlayer ->
-                viewBinding.videoView.player = exoPlayer
 
-                val mediaItem = MediaItem.fromUri(getString(R.string.media_url_mp3))
-                exoPlayer.setMediaItems(listOf(mediaItem), mediaItemIndex, playbackPosition)
-                exoPlayer.playWhenReady = playWhenReady
-                exoPlayer.prepare()
             }
     }
     public override fun onStart() {
