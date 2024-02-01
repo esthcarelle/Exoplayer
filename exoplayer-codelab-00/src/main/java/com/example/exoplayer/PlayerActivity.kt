@@ -54,6 +54,7 @@ class PlayerActivity : AppCompatActivity() {
                 // Update the track selection parameters to only pick standard definition tracks
                 exoPlayer.trackSelectionParameters = exoPlayer.trackSelectionParameters
                     .buildUpon()
+                    .setMaxVideoSizeSd()
                     .build()
             }
     }
