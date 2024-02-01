@@ -53,7 +53,8 @@ class PlayerActivity : AppCompatActivity() {
             .also { exoPlayer ->
                 // Update the track selection parameters to only pick standard definition tracks
                 exoPlayer.trackSelectionParameters = exoPlayer.trackSelectionParameters
-
+                    .buildUpon()
+                    .build()
             }
     }
     public override fun onStart() {
